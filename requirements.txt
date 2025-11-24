@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+twilio
+motor
+pymongo
+celery
+redis
+pytest
+pytest-asyncio
+python-dotenv
