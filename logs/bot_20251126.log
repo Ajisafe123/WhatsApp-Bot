@@ -482,3 +482,31 @@ Try: remind me to study by 3pm...
 2025-11-26 09:52:45 | INFO     | ReminderBot | Message status: {'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABEYEkZEMkJFRUUwNkNCMEFBM0Y0RAA=', 'status': 'sent', 'timestamp': '1764150765', 'recipient_id': '2349056453575', 'pricing': {'billable': False, 'pricing_model': 'PMP', 'category': 'service', 'type': 'free_customer_service'}}
 2025-11-26 09:52:46 | INFO     | ReminderBot | Message status: {'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABEYEkZEMkJFRUUwNkNCMEFBM0Y0RAA=', 'status': 'delivered', 'timestamp': '1764150765', 'recipient_id': '2349056453575', 'pricing': {'billable': False, 'pricing_model': 'PMP', 'category': 'service', 'type': 'free_customer_service'}}
 2025-11-26 09:56:15 | INFO     | ReminderBot | Message status: {'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABEYEkZEMkJFRUUwNkNCMEFBM0Y0RAA=', 'status': 'read', 'timestamp': '1764150974', 'recipient_id': '2349056453575', 'pricing': {'billable': False, 'pricing_model': 'PMP', 'category': 'service', 'type': 'free_customer_service'}}
+2025-11-26 12:25:47 | INFO     | ReminderBot | Received message from 2349056453575: {'from': '2349056453575', 'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABIYFjNFQjA2RUM5MDgxMTExQkY3RTdFMUEA', 'timestamp': '1764159947', 'text': {'body': 'hey'}, 'type': 'text'}
+2025-11-26 12:25:47 | INFO     | ReminderBot | Processing text message: hey
+2025-11-26 12:25:47 | INFO     | ReminderBot | Sending message to 2349056453575: I don't understand. Type 'hi' for menu....
+2025-11-26 12:25:50 | INFO     | ReminderBot | Response status: 401
+2025-11-26 12:25:50 | ERROR    | ReminderBot | Failed to send message: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 26-Nov-25 02:00:00 PST. The current time is Wednesday, 26-Nov-25 04:25:50 PST.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"Az_DMGQIhabsDz8ygasO3jm"}}
+2025-11-26 12:26:24 | INFO     | ReminderBot | Received message from 2349056453575: {'from': '2349056453575', 'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABIYFjNFQjA5MUI1QzdBODgwMUMzNzQ3QTAA', 'timestamp': '1764159983', 'text': {'body': 'remind me to test in 5s x2 every 3s'}, 'type': 'text'}
+2025-11-26 12:26:24 | INFO     | ReminderBot | Processing text message: remind me to test in 5s x2 every 3s
+2025-11-26 12:26:24 | INFO     | ReminderBot | Sending message to 2349056453575: ✅ Reminder set!
+📌 Test
+⏰ 01:26:29 PM
+🔁 Will repeat...
+2025-11-26 12:26:29 | INFO     | ReminderBot | Sending message to 2349056453575: 🔔 *REMINDER* #1
+
+⏰ Test...
+2025-11-26 12:26:29 | INFO     | ReminderBot | Response status: 401
+2025-11-26 12:26:29 | ERROR    | ReminderBot | Failed to send message: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 26-Nov-25 02:00:00 PST. The current time is Wednesday, 26-Nov-25 04:26:30 PST.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"Apkb7VJXq00NX0hAZbM4D2O"}}
+2025-11-26 12:26:32 | INFO     | ReminderBot | Response status: 401
+2025-11-26 12:26:32 | ERROR    | ReminderBot | Failed to send message: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 26-Nov-25 02:00:00 PST. The current time is Wednesday, 26-Nov-25 04:26:32 PST.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"A7z47UBq-ymmBTporS3cjAh"}}
+2025-11-26 12:26:33 | INFO     | ReminderBot | Sending message to 2349056453575: 🔔 *REMINDER* #2
+
+⏰ Test...
+2025-11-26 12:26:36 | INFO     | ReminderBot | Response status: 401
+2025-11-26 12:26:36 | ERROR    | ReminderBot | Failed to send message: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 26-Nov-25 02:00:00 PST. The current time is Wednesday, 26-Nov-25 04:26:36 PST.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AwUYThJmLMkUnKAdknQsyAn"}}
+2025-11-26 12:28:04 | INFO     | ReminderBot | Received message from 2349056453575: {'from': '2349056453575', 'id': 'wamid.HBgNMjM0OTA1NjQ1MzU3NRUCABIYFjNFQjBDQUQyNUY0Nzc2NTNBQkU0RDkA', 'timestamp': '1764160083', 'text': {'body': 'ho'}, 'type': 'text'}
+2025-11-26 12:28:04 | INFO     | ReminderBot | Processing text message: ho
+2025-11-26 12:28:04 | INFO     | ReminderBot | Sending message to 2349056453575: I don't understand. Type 'hi' for menu....
+2025-11-26 12:28:07 | INFO     | ReminderBot | Response status: 401
+2025-11-26 12:28:07 | ERROR    | ReminderBot | Failed to send message: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 26-Nov-25 02:00:00 PST. The current time is Wednesday, 26-Nov-25 04:28:07 PST.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"ASigoOPSTFdOllzF1v-GUzW"}}

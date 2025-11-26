@@ -6,3 +6,4 @@ python-dotenv
 requests
 schedule
 pytz
+python-dateutil

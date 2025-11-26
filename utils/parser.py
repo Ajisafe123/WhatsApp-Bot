@@ -68,7 +68,6 @@ def parse_reminder_command(text, phone):
         if remind_time < now:
             remind_time += timedelta(days=1)
 
-        # Task
         task_match = re.search(r"remind me to (.+?) (?:by|in)", part)
         if not task_match:
             continue
