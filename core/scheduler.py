@@ -1,33 +1,32 @@
-# core/scheduler.py
 import threading
 import time
-from datetime import datetime
-from services.reminder_service import load_reminders, save_reminders, add_reminder
-from models.reminder import Reminder
+from datetime import datetime, timedelta
+from services.reminder_service import load_reminders, save_reminders
 from core.client import wa_client
 import pytz
 
 tz = pytz.timezone("Africa/Lagos")
 
+def send_reminder(reminder):
+    msg = f"🔔 *REMINDER* #{reminder.sent_count + 1}\n\n"
+    msg += f"⏰ {reminder.task}"
+    wa_client.send_message(reminder.user_phone, msg)
+
 def start_scheduler():
     def run():
         while True:
-            now = datetime.now(tz).replace(second=0, microsecond=0)
+            now = datetime.now(tz).replace(microsecond=0)
             reminders = load_reminders()
+            updated = False
             for r in reminders[:]:
-                next_time = r.remind_time.replace(second=0, microsecond=0)
+                next_time = r.remind_time.replace(microsecond=0)
                 if now >= next_time and r.sent_count < r.repeat_count:
-                    msg = f"🔔 *REMINDER* #{r.sent_count + 1}\n\n"
-                    if r.check_done:
-                        msg += f"Have you {r.task.lower()} yet?"
-                    else:
-                        msg += f"⏰ {r.task}"
                     send_reminder(r)
-                    
                     r.sent_count += 1
-                    if r.sent_count < r.repeat_count and r.interval_minutes > 0:
-                        r.remind_time += timedelta(minutes=r.interval_minutes)
-                    save_reminders(reminders)
-            time.sleep(60)
-    
+                    if r.sent_count < r.repeat_count:
+                        r.remind_time += timedelta(minutes=r.interval_minutes, seconds=r.interval_seconds)
+                    updated = True
+            if updated:
+                save_reminders(reminders)
+            time.sleep(1)
     threading.Thread(target=run, daemon=True).start()

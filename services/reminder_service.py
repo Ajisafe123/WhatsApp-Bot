@@ -1,4 +1,3 @@
-# services/reminder_service.py
 import json
 from datetime import datetime, timedelta
 from models.reminder import Reminder
@@ -21,15 +20,19 @@ def save_reminders(reminders):
 
 def add_reminder(reminder):
     reminders = load_reminders()
-    # Remove old one if exists
     reminders = [r for r in reminders if r.id != reminder.id]
     reminders.append(reminder)
     save_reminders(reminders)
 
-def get_user_reminders(phone):
+def list_reminders(phone):
     return [r for r in load_reminders() if r.user_phone == phone]
 
-def delete_reminder(reminder_id):
+def delete_reminder(phone, index):
     reminders = load_reminders()
-    reminders = [r for r in reminders if r.id != reminder_id]
-    save_reminders(reminders)
+    user_reminders = [r for r in reminders if r.user_phone == phone]
+    if 0 <= index < len(user_reminders):
+        reminders.remove(user_reminders[index])
+        save_reminders(reminders)
+
+async def check_pending_reminders():
+    pass

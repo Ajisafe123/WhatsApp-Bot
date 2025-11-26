@@ -1,8 +1,5 @@
-# utils/logger.py
 import logging
 from datetime import datetime
-
-# Create logs folder if not exists
 import os
 if not os.path.exists("logs"):
     os.makedirs("logs")

@@ -1,10 +1,7 @@
-# config/settings.py
-BOT_PHONE = "2349056453575"        # Your main bot number (no +)
+BOT_PHONE = "2349056453575"
 ALLOWED_USERS = [
-    "2349117450722",   # Lecturer
-    "2349056453575",   # You or another user
-    # Add more later
+    "2349056453575",   
+    "2349117450722",  
+    "15551505439",    
 ]
-
-# Timezone: Nigeria
 TIMEZONE = "Africa/Lagos"

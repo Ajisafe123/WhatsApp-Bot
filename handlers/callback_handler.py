@@ -1,4 +1,3 @@
-# handlers/callback_handler.py
 from pywa.types.callback import CallbackSelection, CallbackButton, SectionList, Section
 from utils.formatter import format_reminder_list
 from services.reminder_service import get_user_reminders, delete_reminder
@@ -26,7 +25,6 @@ def register_callback_handlers(wa: "WhatsApp"):
             if not reminders:
                 cb.reply_text("No reminders yet!")
                 return
-            # Show list with cancel options
             sections = []
             for r in reminders:
                 sections.append(

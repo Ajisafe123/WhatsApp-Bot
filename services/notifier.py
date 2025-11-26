@@ -1,4 +1,3 @@
-# services/notifier.py
 from core.client import wa_client
 from utils.logger import logger
 
