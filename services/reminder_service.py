@@ -1,22 +1,32 @@
 import json
-from datetime import datetime, timedelta
+import os
 from models.reminder import Reminder
+from utils.logger import logger
+from datetime import datetime
 import pytz
 
 tz = pytz.timezone("Africa/Lagos")
-STORAGE_FILE = "storage/reminders.json"
+STORAGE_FILE = os.getenv("REMINDER_STORAGE", "storage/reminders.json")
+
+os.makedirs(os.path.dirname(STORAGE_FILE), exist_ok=True)
 
 def load_reminders():
     try:
         with open(STORAGE_FILE, "r") as f:
             data = json.load(f)
             return [Reminder.from_dict(r) for r in data]
-    except:
+    except FileNotFoundError:
+        return []
+    except Exception:
+        logger.exception("Failed to load reminders")
         return []
 
 def save_reminders(reminders):
-    with open(STORAGE_FILE, "w") as f:
-        json.dump([r.to_dict() for r in reminders], f, indent=2)
+    try:
+        with open(STORAGE_FILE, "w") as f:
+            json.dump([r.to_dict() for r in reminders], f, indent=2)
+    except Exception:
+        logger.exception("Failed to save reminders")
 
 def add_reminder(reminder):
     reminders = load_reminders()
@@ -35,4 +45,4 @@ def delete_reminder(phone, index):
         save_reminders(reminders)
 
 async def check_pending_reminders():
-    pass
+    return
