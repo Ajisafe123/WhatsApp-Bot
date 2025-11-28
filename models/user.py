@@ -1,9 +1,8 @@
-# models/user.py
 class User:
     def __init__(self, phone):
         self.phone = phone
         self.name = None
-        self.awaiting_input = None  # e.g., "waiting_for_task_time"
+        self.awaiting_input = None
         self.temp_data = {}
 
     def to_dict(self):
